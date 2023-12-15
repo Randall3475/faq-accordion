@@ -11,7 +11,8 @@ export default function Accordion({ id, question, answer }: AccordionProps) {
   const [accordionOpen, setAccordionOpen] = useState<boolean>(false)
   return (
     <div>
-      <button
+      <div
+        role='button'
         aria-expanded={accordionOpen}
         aria-controls={`accordion-content-${id}`}
         onClick={() => setAccordionOpen(!accordionOpen)}
@@ -21,7 +22,7 @@ export default function Accordion({ id, question, answer }: AccordionProps) {
           {question}
         </h2>
         {accordionOpen ? <IconMinus /> : <IconPlus />}
-      </button>
+      </div>
       <p
         id={`accordion-content-${id}`}
         className={`text-sm font-normal leading-normal text-zinc-500 transition-all lg:text-base ${

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+}
+
 main {
   background:
     url('/assets/images/background-pattern-desktop.svg') no-repeat,
