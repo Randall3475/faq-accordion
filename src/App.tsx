@@ -16,7 +16,11 @@ export default function App() {
             const isLast = Object.values(faq).length === index
             return (
               <React.Fragment key={faq.id}>
-                <Accordion question={faq.question} answer={faq.answer} />
+                <Accordion
+                  id={faq.id}
+                  question={faq.question}
+                  answer={faq.answer}
+                />
                 {!isLast && <hr className='my-6' />}
               </React.Fragment>
             )

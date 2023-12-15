@@ -2,18 +2,18 @@ import { useState } from 'react'
 import { IconPlus, IconMinus } from './ui'
 
 type AccordionProps = {
-  key: string | number
+  id: string | number
   question: string
   answer: string
 }
 
-export default function Accordion({ key, question, answer }: AccordionProps) {
+export default function Accordion({ id, question, answer }: AccordionProps) {
   const [accordionOpen, setAccordionOpen] = useState<boolean>(false)
   return (
     <div>
       <button
         aria-expanded={accordionOpen}
-        aria-controls={`accordion-content-${key}`}
+        aria-controls={`accordion-content-${id}`}
         onClick={() => setAccordionOpen(!accordionOpen)}
         className='group flex w-full cursor-pointer items-center justify-between gap-x-4 text-start'
       >
@@ -23,7 +23,7 @@ export default function Accordion({ key, question, answer }: AccordionProps) {
         {accordionOpen ? <IconMinus /> : <IconPlus />}
       </button>
       <p
-        id={`accordion-content-${key}`}
+        id={`accordion-content-${id}`}
         className={`text-sm font-normal leading-normal text-zinc-500 transition-all lg:text-base ${
           accordionOpen ? 'mt-6' : 'mt-0 h-0 overflow-hidden'
         }`}
