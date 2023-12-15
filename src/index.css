@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main {
+  background:
+    url('/assets/images/background-pattern-desktop.svg') no-repeat,
+    #f8eeff;
+  background-size: contain;
+  font-family: 'Work Sans', sans-serif;
+
+  @media screen and (max-width: 1024px) {
+    background:
+      url('/assets/images/background-pattern-mobile.svg') no-repeat,
+      #f8eeff;
+    background-size: contain;
+  }
+}
+
+section {
+  box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.1);
+}
