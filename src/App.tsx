@@ -1,6 +1,6 @@
 import React from 'react'
-import Accordion from './components/Accordion'
-import { faq } from './data'
+import Accordion from '@/components/Accordion'
+import { faq } from '@/data'
 export default function App() {
   return (
     <main className='absolute grid h-full w-full place-items-center p-4'>
@@ -17,6 +17,7 @@ export default function App() {
             return (
               <React.Fragment key={faq.id}>
                 <Accordion
+                  open={index === 0 && true}
                   id={faq.id}
                   question={faq.question}
                   answer={faq.answer}

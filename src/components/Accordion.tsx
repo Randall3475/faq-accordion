@@ -1,14 +1,20 @@
 import { useState } from 'react'
-import { IconPlus, IconMinus } from './ui'
+import { IconPlus, IconMinus } from '@/components/ui'
 
 type AccordionProps = {
   id: string | number
   question: string
   answer: string
+  open?: boolean
 }
 
-export default function Accordion({ id, question, answer }: AccordionProps) {
-  const [accordionOpen, setAccordionOpen] = useState<boolean>(false)
+export default function Accordion({
+  id,
+  question,
+  answer,
+  open = false,
+}: AccordionProps) {
+  const [accordionOpen, setAccordionOpen] = useState<boolean>(open)
   return (
     <div>
       <div
